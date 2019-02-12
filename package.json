@@ -6,7 +6,6 @@
   "scripts": {
     "start": "node server/index.js",
     "dev": "nodemon server/index.js"
-
   },
   "author": "Muhamad Farid Safwan Abu Bakar",
   "license": "MIT",
