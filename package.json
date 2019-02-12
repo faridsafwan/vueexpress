@@ -1,0 +1,22 @@
+{
+  "name": "vueexpress",
+  "version": "1.0.0",
+  "description": "Full stack Vue and Express app",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js"
+
+  },
+  "author": "Muhamad Farid Safwan Abu Bakar",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "mongodb": "^3.1.13"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
