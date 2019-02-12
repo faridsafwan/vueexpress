@@ -5,7 +5,11 @@ const router = express.Router();
 
 // Get Posts
 router.get('/', async (req, res) => {
+  console.log("belum masuk");
+
   const posts = await loadPostsCollection();
+  console.log("dah masuk");
+  
   res.send(await posts.find({}).toArray());
 });
 
