@@ -5,11 +5,7 @@ const router = express.Router();
 
 // Get Posts
 router.get('/', async (req, res) => {
-  console.log("belum masuk");
-
-  const posts = await loadPostsCollection();
-  console.log("dah masuk");
-  
+  const posts = await loadPostsCollection();  
   res.send(await posts.find({}).toArray());
 });
 
@@ -32,11 +28,13 @@ router.delete('/:id', async (req, res) => {
 
 async function loadPostsCollection() {
   const client = await mongodb.MongoClient.connect(
-    'mongodb://admin:admin@firstcluster-shard-00-00-lic1d.mongodb.net:27017,firstcluster-shard-00-01-lic1d.mongodb.net:27017,firstcluster-shard-00-02-lic1d.mongodb.net:27017/test?ssl=true&replicaSet=FirstCluster-shard-0&authSource=admin&retryWrites=true',
+    'mongodb+srv://admin:admin@firstcluster-lic1d.mongodb.net/test?retryWrites=true',
+    // 'mongodb://admin:admin@firstcluster-shard-00-00-lic1d.mongodb.net:27017,firstcluster-shard-00-01-lic1d.mongodb.net:27017,firstcluster-shard-00-02-lic1d.mongodb.net:27017/test?ssl=true&replicaSet=FirstCluster-shard-0&authSource=admin&retryWrites=true',
     {
       useNewUrlParser: true
-    }
-  );
+    }  ).catch(err => {
+      console.log(err)
+    });
 
   return client.db('vue_express').collection('posts');
 }
