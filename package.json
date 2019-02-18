@@ -4,13 +4,14 @@
   "description": "Full stack Vue and Express app",
   "main": "server.js",
   "scripts": {
-    "start": "node server/index.js",
+    "start": "concurrently \"node server/index.js\" \"cd client && npm run serve\"",
     "dev": "nodemon server/index.js"
   },
   "author": "Muhamad Farid Safwan Abu Bakar",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "mongodb": "^3.1.13"
