@@ -7,7 +7,7 @@ const router = express.Router();
 router.get('/', async (req, res) => {
   try {
     const posts = await loadPostsCollection();  
-    res.send(await posts.find({}).toArray());
+    res.send(await posts.find().toArray());
   } catch (error) {
     return res.send(error)
   }
