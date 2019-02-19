@@ -37,9 +37,7 @@ async function loadPostsCollection() {
       // 'mongodb://admin:admin@firstcluster-shard-00-00-lic1d.mongodb.net:27017,firstcluster-shard-00-01-lic1d.mongodb.net:27017,firstcluster-shard-00-02-lic1d.mongodb.net:27017/test?ssl=true&replicaSet=FirstCluster-shard-0&authSource=admin&retryWrites=true',
       {
         useNewUrlParser: true
-      }  ).catch(err => {
-        console.log(err)
-      });
+      }  );
   
     return client.db('vue_express').collection('posts');  
   // } catch (error) {
