@@ -5,12 +5,12 @@ const router = express.Router();
 
 // Get Posts
 router.get('/', async (req, res) => {
-  // try {
+  try {
     const posts = await loadPostsCollection();  
     res.send(await posts.find({}).toArray());
-  // } catch (error) {
-  //   return res.send(error)
-  // }
+  } catch (error) {
+    return res.send(error)
+  }
 });
 
 // Add Post
