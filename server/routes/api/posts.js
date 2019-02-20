@@ -7,8 +7,12 @@ const router = express.Router();
 router.get('/', async (req, res) => {
   try {
     const posts = await loadPostsCollection();  
+    console.log(posts);
+    
     res.send(await posts.find({}).toArray());
   } catch (error) {
+    console.log(error);
+    
     return res.send(error)
   }
 });
